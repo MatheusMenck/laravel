@@ -17,6 +17,7 @@ class Personagem extends Controller
     }
 
     function listarPersonagem(){
-        return view('listar-personagem');
+        $personagem = personagens::all()->toArray();
+        return view('listar-personagem', ['personagem'=>$personagem]);
     }
 }
